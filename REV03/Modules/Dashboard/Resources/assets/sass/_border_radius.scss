@@ -1,6 +1,0 @@
-/* Border Radius Smarter */
-@for $i from 1 through 20 {
-    .border-radius-px-#{$i} {
-        border-radius: #{$i}px;
-    }
-}
