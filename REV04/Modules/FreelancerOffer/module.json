@@ -1,0 +1,11 @@
+{
+    "name": "FreelancerOffer",
+    "alias": "freelanceroffer",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\FreelancerOffer\\Providers\\FreelancerOfferServiceProvider"
+    ],
+    "files": []
+}

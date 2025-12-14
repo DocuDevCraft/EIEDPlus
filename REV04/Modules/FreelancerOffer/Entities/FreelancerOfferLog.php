@@ -1,0 +1,16 @@
+<?php
+
+namespace Modules\FreelancerOffer\Entities;
+
+use Illuminate\Database\Eloquent\Model;
+
+class FreelancerOfferLog extends Model
+{
+    protected $table = 'freelancer_offer_log';
+    protected $fillable = [
+        'user_id',
+        'work_package_id',
+    ];
+
+    public $timestamps = true;
+}

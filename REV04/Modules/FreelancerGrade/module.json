@@ -1,0 +1,11 @@
+{
+    "name": "FreelancerGrade",
+    "alias": "freelancergrade",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\FreelancerGrade\\Providers\\FreelancerGradeServiceProvider"
+    ],
+    "files": []
+}
