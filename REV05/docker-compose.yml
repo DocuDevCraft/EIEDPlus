@@ -1,0 +1,60 @@
+services:
+    app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: laravel-app
+       # working_dir: /var/www/html
+        volumes:
+            - .:/var/www/html
+        ports:
+            - "8000:8000"
+        networks:
+            - laravel
+        environment:
+            - APP_ENV=local
+            - APP_DEBUG=true
+            - APP_KEY=base64:YourAppKeyHere
+            - DB_CONNECTION=mysql
+            - DB_HOST=db
+            - DB_PORT=3306
+            - DB_DATABASE=laravel
+            - DB_USERNAME=laravel
+            - DB_PASSWORD=secret
+        command: php artisan serve --host=0.0.0.0 --port=8000
+        depends_on:
+            - db
+
+    db:
+        image: mysql:8.0
+        container_name: mysql-db
+        ports:
+            - "3306:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: laravel
+            MYSQL_USER: laravel
+            MYSQL_PASSWORD: secret
+        volumes:
+            - db-data:/var/lib/mysql
+        networks:
+            - laravel
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        container_name: phpmyadmin
+        environment:
+            PMA_HOST: db  # نام سرویس دیتابیس که در docker-compose.yml تعریف شده است
+            PMA_USER: laravel  # نام کاربری پایگاه داده
+            PMA_PASSWORD: secret  # رمز عبور پایگاه داده
+        ports:
+            - "8080:80"  # پورت 8080 در ماشین میزبان به پورت 80 در کانتینر phpMyAdmin متصل می‌شود
+        depends_on:
+            - db
+        networks:
+            - laravel
+
+volumes:
+    db-data:
+    
+networks:
+    laravel:
