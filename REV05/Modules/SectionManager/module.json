@@ -1,0 +1,11 @@
+{
+    "name": "SectionManager",
+    "alias": "sectionmanager",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\SectionManager\\Providers\\SectionManagerServiceProvider"
+    ],
+    "files": []
+}

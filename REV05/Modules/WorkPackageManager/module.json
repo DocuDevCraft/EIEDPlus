@@ -1,0 +1,11 @@
+{
+    "name": "WorkPackageManager",
+    "alias": "workpackagemanager",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\WorkPackageManager\\Providers\\WorkPackageManagerServiceProvider"
+    ],
+    "files": []
+}
