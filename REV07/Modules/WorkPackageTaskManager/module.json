@@ -1,0 +1,11 @@
+{
+    "name": "WorkPackageTaskManager",
+    "alias": "workpackagetaskmanager",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\WorkPackageTaskManager\\Providers\\WorkPackageTaskManagerServiceProvider"
+    ],
+    "files": []
+}
